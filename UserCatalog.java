@@ -24,6 +24,7 @@ public class UserCatalog {
     public void setUsers(ArrayList<User> users) {
         this.users = users;
     }
+
     public User getUser(int id){
         for(int i = 0; i<users.size(); i++){
             if( users.get(i).getUserId() == id){
@@ -31,6 +32,25 @@ public class UserCatalog {
             }
         }
         return  null;
+    }
+
+    public Boolean existingUsername(String userName){
+        for( int i = 0; i<users.size(); i++){
+            if(users.get(i).getUsername().equals(userName)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public User getUser(String username){
+        for(int i = 0; i<users.size(); i++) {
+            if(users.get(i).getUsername().equals(username)){
+                return users.get(i);
+            }
+        }
+        System.out.println("Username"+ username +" does not exist.");
+        return null;
     }
 
 

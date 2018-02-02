@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Scanner;
 
 public class Controller {
     private ObjectCatalog objectCatalog;
@@ -43,12 +44,52 @@ public class Controller {
         this.objectIds.add(id);
     }
 
-    public void makeBid(int userId, int objectId, double amount)
+    public BidCatalog getBidCatalog() {
+        return bidCatalog;
+    }
+
+    public void signUp(){
+        System.out.println("To sign up as new user please enter your username.");
+        Scanner scanner = new Scanner(System.in);
+        String username = scanner.nextLine();
+
+        while(userCatalog.existingUsername(username))
+        {
+            System.out.println("Username is already taken, please enter new username.");
+            username = scanner.nextLine();
+
+        }
+        userCatalog.makeUser(username);
+        System.out.println("You have successfully registered!");
+
+
+    }
+
+    public User signIn() {
+        Scanner scanner = new Scanner(System.in);
+        User current_user = null;
+        while(current_user == null) {
+            System.out.println("To sign in please enter your username: ");
+            String username = scanner.nextLine();
+            current_user = userCatalog.getUser(username);
+        }
+        return current_user;
+    }
+
+    public void makeBid(int userId, int objectId)
     {
+        Scanner scanner = new Scanner(System.in);
+        Double amount = scanner.nextDouble();
+        while(amount < objectCatalog.getObject(objectId).getObjectDescription().getStartingBid()){
+            System.out.println("You need to above the starting bid, please enter you bid again");
+            amount = scanner.nextDouble();
+        }
 
         Bid bid = bidCatalog.createBid(userId, objectId, amount);
         Object current_obj = objectCatalog.getObject(objectId);
         current_obj.addBid(bid);
+        System.out.println("Your bid " + amount+ " was registered. Thank you.");
+
     }
 
     public void findWinner(int objectId) {

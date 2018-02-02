@@ -26,5 +26,4 @@ public class ObjectDescription {
     public String getDescription() {
         return description;
     }
-
 }

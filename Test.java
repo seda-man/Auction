@@ -13,8 +13,9 @@ public class Test
 
         Controller controller = new Controller();
 
-        ObjectCatalog cat1 = new ObjectCatalog();
-        Object obj1 = cat1.makeObject("Piano","101");
+
+
+        Object obj1 = controller.getObjectCatalog().makeObject("Piano","101");
 
 
         ObjectDescription desc1 = new ObjectDescription();
@@ -32,16 +33,19 @@ public class Test
         System.out.println("The estimated price: " + currentDescription.getEstimatedPrice());
         System.out.println("The description: " + currentDescription.getDescription());
         System.out.println();
+
+        User current_user;
         for(int i=0; i<3; i++)
         {
             System.out.println("To sign in " + "as user N" + (i+1) + " please enter your username: ");
             Scanner scanner = new Scanner(System.in);
             String username = scanner.nextLine();
+            current_user = controller.getUserCatalog().makeUser(username);
             System.out.println("User with username " + username + " was created.");
-
 
             System.out.println("Please enter your bid.");
             Double userBid = scanner.nextDouble();
+            controller.makeBid(current_user.getUserId(), obj1.getObjectId(), userBid);
             System.out.println("Your bid " + userBid + " was registered. Thank you.");
 
 
@@ -58,7 +62,7 @@ public class Test
 
         }
 
-        controller.findWinner(0);
+        controller.findWinner(obj1.getObjectId());
 
 
     }

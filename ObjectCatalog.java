@@ -6,7 +6,7 @@ public class ObjectCatalog {
     public Object makeObject(String name, String status) {
         int id = 0;
         if(objects.size()>0){
-            id = objects.get(objects.size()).getObjectId() +1;
+            id = objects.get(objects.size() - 1).getObjectId() +1;
         }
         Object newObject = new Object(name, id, status);
         objects.add(newObject);
@@ -33,8 +33,5 @@ public class ObjectCatalog {
         }
         return null;
     }
-
-
-
 
 }

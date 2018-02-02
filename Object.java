@@ -5,7 +5,7 @@ public class Object{
     private int objectId;
     private String status;
     private ObjectDescription objectDescription;
-    private ArrayList<Bid> bids = new ArrayList<Bid>();
+    private ArrayList<Bid> bids = new ArrayList<>();
 
     public Object(String name, int id, String status) {
         this.name = name;
@@ -54,7 +54,8 @@ public class Object{
     }
 
     public void addBid(Bid newBid) {
-        bids.add(newBid);
+
+        this.bids.add(newBid);
     }
 
 }

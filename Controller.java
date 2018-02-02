@@ -11,6 +11,12 @@ public class Controller {
     private BidCatalog bidCatalog;
     private ArrayList<Integer> objectIds = new ArrayList<Integer>();
 
+    public Controller(){
+        this.objectCatalog = new ObjectCatalog();
+        this.userCatalog = new UserCatalog();
+        this.bidCatalog = new BidCatalog();
+    }
+
     public ObjectCatalog getObjectCatalog() {
         return objectCatalog;
     }
@@ -33,35 +39,28 @@ public class Controller {
     }
 
     public void addObjectId(int id) {
+
         this.objectIds.add(id);
     }
-    public void makeBid(int userId, int objectId, double amount){
-        bidCatalog.createBid(userId, objectId, amount);
+
+    public void makeBid(int userId, int objectId, double amount)
+    {
+
+        Bid bid = bidCatalog.createBid(userId, objectId, amount);
+        Object current_obj = objectCatalog.getObject(objectId);
+        current_obj.addBid(bid);
     }
 
     public void findWinner(int objectId) {
-//        try {
-//            BufferedReader in = new BufferedReader(new FileReader("bids.txt"));
-//            String str;
-//
-//
-//            while ((str = in.readLine()) != null) {
-//                String[] ar=str.split(",");
-//                users.add(ar[0]);
-//                bids.add(Double.parseDouble(ar[1]));
-//            }
-//            in.close();
-//        } catch (IOException e) {
-//            System.out.println("File Read Error");
-//        }
 
         Object curr_object = objectCatalog.getObject(objectId);
         ArrayList<Bid> bids = curr_object.getBids();
         Double max = 0.0;
         int index = 0;
+        System.out.println(bids.size());
         for (int counter = 0; counter < bids.size(); counter++)
         {
-            if (bids.get(0).getAmount() > max)
+            if (bids.get(counter).getAmount() > max)
             {
                 max = bids.get(counter).getAmount();
                 index = counter;
@@ -71,7 +70,7 @@ public class Controller {
         User winning_user = userCatalog.getUser(userId);
 
         System.out.println("The maximum bid was: " + max);
-        Integer ind = bids.indexOf(max);
+
         System.out.println("Congratulations " + winning_user.getUsername() + " won!");
     }
 

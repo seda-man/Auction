@@ -6,7 +6,7 @@ public class UserCatalog {
     public User makeUser(String username) {
         int id = 0;
         if(users.size() > 0){
-            id = users.get(users.size()).getUserId() +1;
+            id = users.get(users.size() - 1).getUserId() +1;
         }
         User newUser = new User(username, id);
         users.add(newUser);

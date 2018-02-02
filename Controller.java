@@ -36,7 +36,7 @@ public class Controller {
         this.objectIds.add(id);
     }
     public void makeBid(int userId, int objectId, double amount){
-            bidCatalog.createBid(userId, objectId, amount);
+        bidCatalog.createBid(userId, objectId, amount);
     }
 
     public void findWinner(int objectId) {

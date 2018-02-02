@@ -14,7 +14,7 @@ public class Test
         Controller controller = new Controller();
 
         ObjectCatalog cat1 = new ObjectCatalog();
-        Object obj1 = cat1.makeObject("Piano","101","onBid");
+        Object obj1 = cat1.makeObject("Piano","101");
 
 
         ObjectDescription desc1 = new ObjectDescription();

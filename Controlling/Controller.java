@@ -1,9 +1,12 @@
-import java.io.PushbackInputStream;
-import java.security.PublicKey;
+package Controlling;
+import Catalogs.BidCatalog;
+import Catalogs.ObjectCatalog;
+import Catalogs.UserCatalog;
+import Model.Bid;
+import Model.Object;
+import Model.User;
+
 import java.util.ArrayList;
-import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.Scanner;
 
 public class Controller {
@@ -81,7 +84,7 @@ public class Controller {
         Scanner scanner = new Scanner(System.in);
         Double amount = scanner.nextDouble();
         while(amount < objectCatalog.getObject(objectId).getObjectDescription().getStartingBid()){
-            System.out.println("You need to above the starting bid, please enter you bid again");
+            System.out.println("You need to bid higher than the starting bid, please enter you bid again");
             amount = scanner.nextDouble();
         }
 

@@ -1,3 +1,7 @@
+import Catalogs.ObjectCatalog;
+import Catalogs.UserCatalog;
+import Controlling.Controller;
+
 public class Auction {
     private String name;
 

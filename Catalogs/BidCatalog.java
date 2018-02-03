@@ -1,3 +1,7 @@
+package Catalogs;
+
+import Model.Bid;
+
 import java.util.ArrayList;
 
 public class BidCatalog {

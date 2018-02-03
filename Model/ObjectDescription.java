@@ -1,3 +1,5 @@
+package Model;
+
 public class ObjectDescription {
     private Double startingBid;
     private Double estimatedPrice;

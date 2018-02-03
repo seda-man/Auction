@@ -1,3 +1,7 @@
+package Catalogs;
+
+import Model.Object;
+
 import java.util.ArrayList;
 
 public class ObjectCatalog {

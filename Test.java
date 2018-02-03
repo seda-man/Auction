@@ -1,9 +1,10 @@
+import Controlling.Controller;
+import Model.ObjectDescription;
+import Model.Object;
+import Model.User;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
 
 public class Test
 {
@@ -52,7 +53,7 @@ public class Test
                 }
                 current_object = controller.getObjectCatalog().getObject(objIds.get(object));
 
-                System.out.println("Do you wish to make a bid?");
+                System.out.println("Please enter your bid");
 
                 controller.makeBid(current_user.getUserId(), current_object.getObjectId());
             }

@@ -1,3 +1,5 @@
+package Model;
+
 public class Bid {
     private double amount;
     private int bidId;

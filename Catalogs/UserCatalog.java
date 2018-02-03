@@ -1,3 +1,7 @@
+package Catalogs;
+
+import Model.User;
+
 import java.util.ArrayList;
 
 public class UserCatalog {

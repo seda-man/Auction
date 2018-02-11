@@ -1,10 +1,11 @@
-package Model;
+package Server.Models;
 
-import Model.Bid;
+import Server.Models.ObjectDescription;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Object{
+public class Object implements Serializable{
     private String name;
     private int objectId;
     private String status;
@@ -63,7 +64,7 @@ public class Object{
     }
     public void display(){
         System.out.println("The current object on bid is the following:");
-        System.out.println("Model.Object name: " + name);
+        System.out.println("Server.Models.Object name: " + name);
         System.out.println("The starting bid: " + objectDescription.getStartingBid());
         System.out.println("The estimated price: " + objectDescription.getEstimatedPrice());
         System.out.println("The description: " + objectDescription.getDescription());

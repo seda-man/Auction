@@ -1,10 +1,9 @@
-package Catalogs;
+package Server.Catalogs;
 
-import Model.Object;
-
+import java.io.Serializable;
 import java.util.ArrayList;
-
-public class ObjectCatalog {
+import Server.Models.Object;
+public class ObjectCatalog implements Serializable{
     private ArrayList<Object> objects = new ArrayList<Object>();
 
     public Object makeObject(String name, String status) {

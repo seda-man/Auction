@@ -1,10 +1,11 @@
-package Catalogs;
+package Server.Catalogs;
 
-import Model.User;
+import Server.Models.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class UserCatalog {
+public class UserCatalog implements Serializable{
     private ArrayList<User> users = new ArrayList<User>();
 
     public User makeUser(String username) {

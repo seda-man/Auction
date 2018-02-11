@@ -1,6 +1,8 @@
-package Model;
+package Server.Models;
 
-public class Bid {
+import java.io.Serializable;
+
+public class Bid implements Serializable{
     private double amount;
     private int bidId;
     private int userId;

@@ -1,10 +1,10 @@
-package Catalogs;
+package Server.Catalogs;
 
-import Model.Bid;
+import Server.Models.Bid;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-
-public class BidCatalog {
+public class BidCatalog implements Serializable{
     private ArrayList<Bid> bids = new ArrayList<>();
 
     public Bid createBid(int userId, int objectId, double amount){

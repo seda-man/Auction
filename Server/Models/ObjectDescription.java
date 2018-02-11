@@ -1,6 +1,8 @@
-package Model;
+package Server.Models;
 
-public class ObjectDescription {
+import java.io.Serializable;
+
+public class ObjectDescription implements Serializable{
     private Double startingBid;
     private Double estimatedPrice;
     private String description;

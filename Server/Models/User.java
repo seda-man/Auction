@@ -1,15 +1,16 @@
 package Server.Models;
 
 import Client.Client;
-
+import Client.ClientInterface;
 import java.io.Serializable;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public class User implements Serializable{
     private String username;
     private ArrayList<Integer> bidIds;
     private int userId;
-    private Client client;
+    private ClientInterface client;
 
     public User(String username, int userId) {
         this.username = username;
@@ -17,7 +18,7 @@ public class User implements Serializable{
         this.bidIds = new ArrayList<>();
     }
 
-    public Client getClient() {
+    public ClientInterface getClient() {
         return client;
     }
 
@@ -29,7 +30,7 @@ public class User implements Serializable{
         this.username = username;
     }
 
-    public void setClient(Client client){
+    public void setClient(ClientInterface client){
         this.client = client;
     }
 
@@ -50,12 +51,16 @@ public class User implements Serializable{
             System.out.println("null");
         }
         else {
-            System.out.println(winnerId);
-            if(winnerId == userId){
-                client.notifyWin();
+            try {
+                if (winnerId == userId) {
+                    client.notifyWin();
+                } else {
+                    client.notifyLoose();
+                }
             }
-            else {
-                client.notifyLoose();
+            catch(RemoteException e){
+                System.out.println("!!!!!!!!!!!!!!!!");
+                throw new IllegalStateException();
             }
         }
     }

@@ -1,5 +1,6 @@
 package Server;
 
+import Client.ClientInterface;
 import Server.Catalogs.ObjectCatalog;
 
 import Server.Catalogs.UserCatalog;
@@ -81,20 +82,23 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         User current_user = userCatalog.getUser(username);
         return current_user;
     }
+
+    public void setClient(ClientInterface c, int userId){
+        userCatalog.getUser(userId).setClient(c);
+    }
     @Override
     public void makeBid(int userId, int objectId, float amount)
     {
         //TODO check if amount is valid
-
         Bid bid = bidCatalog.createBid(userId, objectId, amount);
         Object current_obj = objectCatalog.getObject(objectId);
         current_obj.addBid(bid);
+        if(current_obj.getBids().size() == 3){
+            findWinner(objectId);
+        }
     }
 
     public int findWinner(int objectId) {
-        if(objectCatalog.getObject(objectId).getBids().size() < 3){
-            return -1;
-        }
         Object curr_object = objectCatalog.getObject(objectId);
         ArrayList<Bid> bids = curr_object.getBids();
         ArrayList<Integer> userIds = new ArrayList<>();
@@ -102,17 +106,17 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         int index = 0;
         for (int counter = 0; counter < bids.size(); counter++)
         {
+            userIds.add(bids.get(counter).getUserId());
             if (bids.get(counter).getAmount() > max)
             {
-                userIds.add(bids.get(counter).getUserId());
                 max = bids.get(counter).getAmount();
                 index = counter;
             }
         }
         int userId = bids.get(index).getUserId();
-//        for(int id : userIds){
-//            userCatalog.getUser(id).winnerIs(userId);
-//        }
+        for(int id : userIds){
+            userCatalog.getUser(id).winnerIs(userId);
+        }
     return userId;
     }
 }

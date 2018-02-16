@@ -43,17 +43,23 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
                 Object current_object;
                 User current_user;
                 String choice;
-
-                while(true) {
+                {
 
                     System.out.println("If you wish to register please enter 'sign up', if you already have an account write 'sign in'");
                     choice = scanner.nextLine();
+                    while(!(choice.equals("sign up") || choice.equals("sign in"))){
+                        choice = scanner.nextLine();
+                    }
                     if (choice.equals("sign up")) {
                         System.out.println("please enter username");
                         String name = scanner.next();
                         scanner.nextLine();
                         controller.signUp(name);
 
+                        System.out.println("Please sign in to continue");
+                        while(!choice.equals("sign in")){
+                            choice = scanner.nextLine();
+                        }
                     }
                     if (choice.equals("sign in")) {
                         System.out.println("please enter username");
@@ -75,7 +81,7 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
                         Float amount = scanner.nextFloat();
 
                         controller.makeBid(current_user.getUserId(), current_object.getObjectId(), amount);
-                        break;
+
                     }
                 }
             }

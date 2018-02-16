@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="65b15e1a-ea33-4248-9ecd-3fa500481b33" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client.class" afterPath="$PROJECT_DIR$/Client/Client.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/AuctionServer.class" afterPath="$PROJECT_DIR$/Server/AuctionServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ControllerImpl.class" afterPath="$PROJECT_DIR$/Server/ControllerImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ControllerInterface.class" afterPath="$PROJECT_DIR$/Server/ControllerInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Models/User.class" afterPath="$PROJECT_DIR$/Server/Models/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client.java" afterPath="$PROJECT_DIR$/Client/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/AuctionServer.java" afterPath="$PROJECT_DIR$/Server/AuctionServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ControllerImpl.java" afterPath="$PROJECT_DIR$/Server/ControllerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ControllerInterface.java" afterPath="$PROJECT_DIR$/Server/ControllerInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Models/User.java" afterPath="$PROJECT_DIR$/Server/Models/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,8 +54,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -829,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

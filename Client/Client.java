@@ -2,6 +2,10 @@ package Client;
 
 import Server.Models.User;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.PushbackInputStream;
 import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
@@ -13,11 +17,16 @@ import java.util.Scanner;
 import Server.Models.Object;
 import Server.ControllerInterface;
 
+import javax.swing.*;
+
 public class Client extends UnicastRemoteObject implements ClientInterface{
     private String status;
+    private Thread autoBidThread;
+    private User current_user;
     public void notifyWin(){
         System.out.println("Congratulations you have won!");
         status = "done";
+
     }
 
     public void notifyLoose(){
@@ -25,65 +34,170 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
         status = "done";
     }
 
-    public Client() throws Exception{
+    public void setUpBidding(ControllerInterface controller, Object object){
+        JFrame frame = new JFrame("Bidding on Object" + object.getName());
+        frame.setSize(700,300);
+        frame.setLayout(null);
 
+        JTextArea amount = new JTextArea();
+        amount.setBounds(20,25, 200,20);
+        JButton bid = new JButton("Make Bid");
+        bid.setBounds(45,65, 150,50);
+        JButton autoBid = new JButton("AutoBid");
+        autoBid.setBounds(45,135, 150,50);
+        JButton stopAutoBid = new JButton("Stop Bidding");
+        stopAutoBid.setEnabled(false);
+        stopAutoBid.setBounds(45,205, 150,50);
+        JButton hide_history = new JButton("Hide History");
+        hide_history.setBounds(260,25,200, 30);
+        JTextField history = new JTextField();
+        history.setEditable(false);
+        history.setBounds(480, 25, 200, 250);
+        JLabel time = new JLabel("0:0:0");
+        time.setBounds(380,245,100, 30);
+        frame.add(amount);
+        frame.add(bid);
+        frame.add(autoBid);
+        frame.add(stopAutoBid);
+        frame.add(hide_history);
+        frame.add(history);
+        frame.add(time);
+
+        bid.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    controller.makeBid(current_user.getUserId(), object.getObjectId(), Integer.valueOf(amount.getText()));
+                }
+                catch(Exception e){
+
+                }
+            }
+        });
+
+        autoBid.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try{
+                    autoBid.setEnabled(false);
+                    stopAutoBid.setEnabled(true);
+                    autoBidThread = controller.autoBid(current_user.getUserId(), object.getObjectId());
+
+                }
+                catch(Exception e) {
+                }
+            }
+        });
+
+
+        stopAutoBid.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try{
+                    autoBidThread.interrupt();
+                    autoBid.setEnabled(true);
+                    stopAutoBid.setEnabled(false);
+                }
+                catch(Exception e) {
+                }
+            }
+        });
+        frame.setVisible(true);
+    }
+    public void setupObjects(ControllerInterface controller){
+        final JFrame frame = new JFrame("Object List");
+        frame.setSize(500,300);
+        frame.setVisible(true);
+        frame.setLayout(new GridLayout(0,2));
+        try {
+            ArrayList<Integer> objIds = controller.getObjectIds();
+            for (int j = 0; j < objIds.size(); j++) {
+                String s = controller.display(objIds.get(j));
+                System.out.println(s);
+                JButton object = new JButton(s);
+//                object.setText();
+                frame.add(object);
+                System.out.println("in try block");
+                final int objectId = j;
+                object.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent actionEvent) {
+                        try {
+                            Object current_object = controller.getObjectCatalog().getObject(objIds.get(objectId));
+                            frame.setVisible(false);
+                            setUpBidding(controller, current_object);
+                        }
+                        catch (Exception e){
+
+                        }
+                    }
+                });
+            }
+        }
+        catch (Exception e){
+
+        }
+    }
+    public void setupSignIn(ControllerInterface controller){
+        final JFrame frame = new JFrame("Sign-in/Sign-up");
+        frame.setSize(500,300);
+        frame.setLayout(null);
+        JTextArea username = new JTextArea();
+        username.setBounds(150,20, 200,20);
+        JButton sign_in = new JButton("Sign In");
+        sign_in.setBounds(200,50, 100,50);
+        JButton sign_up = new JButton("Sign Up");
+        sign_up.setBounds(200,120, 100,50);
+        frame.add(username);
+        frame.add(sign_in);
+        frame.add(sign_up);
+        frame.setVisible(true);
+        sign_in.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try{
+                    current_user = controller.signIn(username.getText());
+                    frame.setVisible(false);
+                    controller.setClient(Client.this, current_user.getUserId());
+                    setupObjects(controller);
+                }
+                catch (Exception e){
+
+                }
+            }
+        });
+        sign_up.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try{
+                    frame.setVisible(false);
+                    controller.signUp(username.getText());
+                    current_user = controller.signIn(username.getText());
+                    controller.setClient(Client.this, current_user.getUserId());
+                    setupObjects(controller);
+                }
+                catch (Exception e){
+
+                }
+            }
+        });
+    }
+
+    public Client(ControllerInterface controller) throws Exception{
+        if (controller == null){
+            return;
+        }
+
+        setupSignIn(controller);
     }
     public static void main(String[] args) throws Exception {
         try {
-            Client c = new Client();
             System.setProperty("java.rmi.server.hostname", "127.0.0.1");
             {
                 System.out.println("About to call hello");
                 ControllerInterface controller = (ControllerInterface) Naming.lookup("rmi://localhost/controller");
-                if (controller != null)
-                    System.out.println("Looked up remote object");
+                new Client(controller);
 
-
-                Scanner scanner = new Scanner(System.in);
-                Object current_object;
-                User current_user;
-                String choice;
-                {
-
-                    System.out.println("If you wish to register please enter 'sign up', if you already have an account write 'sign in'");
-                    choice = scanner.nextLine();
-                    while(!(choice.equals("sign up") || choice.equals("sign in"))){
-                        choice = scanner.nextLine();
-                    }
-                    if (choice.equals("sign up")) {
-                        System.out.println("please enter username");
-                        String name = scanner.next();
-                        scanner.nextLine();
-                        controller.signUp(name);
-
-                        System.out.println("Please sign in to continue");
-                        while(!choice.equals("sign in")){
-                            choice = scanner.nextLine();
-                        }
-                    }
-                    if (choice.equals("sign in")) {
-                        System.out.println("please enter username");
-                        String name = scanner.next();
-                        current_user = controller.signIn(name);
-                        controller.setClient(c, current_user.getUserId());
-                        c.status = "waiting";
-                        System.out.println("Here is the list of objects, select which object you like to bid on.");
-                        ArrayList<Integer> objIds = controller.getObjectIds();
-                        for (int j = 0; j < objIds.size(); j++) {
-                            System.out.println("Enter  " + j + "  For the following object");
-                            controller.getObjectCatalog().getObject(objIds.get(j)).display();
-                        }
-                        int object = scanner.nextInt();
-
-                        current_object = controller.getObjectCatalog().getObject(objIds.get(object));
-
-                        System.out.println("Please enter your bid");
-                        Float amount = scanner.nextFloat();
-
-                        controller.makeBid(current_user.getUserId(), current_object.getObjectId(), amount);
-
-                    }
-                }
             }
         }
         catch (NotBoundException e)

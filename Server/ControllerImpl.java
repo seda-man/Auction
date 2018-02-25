@@ -48,7 +48,10 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         return userCatalog;
     }
 
-
+    public String display(int objectId){
+        String s =  getObjectCatalog().getObject(objectId).display();
+        return s;
+    }
     public void setUserCatalog(UserCatalog userCatalog) {
         this.userCatalog = userCatalog;
     }
@@ -61,6 +64,40 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
 
         this.objectIds.add(id);
     }
+    public Thread autoBid(int userId, int objectId){
+        Thread curr = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("run");
+                while(true){
+                    Object current_obj = objectCatalog.getObject(objectId);
+                    ArrayList<Bid> bids = current_obj.getBids();
+                    double max = 0;
+                    int max_user = 0;
+                    System.out.println("while");
+                    for(Bid bid : bids){
+                        if(bid.getAmount() > max){
+                            max = bid.getAmount();
+                            max_user = bid.getUserId();
+                        }
+                    }
+                    if (max_user != userId){
+                        Bid bid = bidCatalog.createBid(userId, objectId, max  + 10);
+                        current_obj.addBid(bid);
+                    }
+                    try{
+                        Thread.sleep(10000);
+                    }
+                    catch (InterruptedException e){
+                        System.out.println("Sleeping Thread 'zzzz...'");
+                    }
+                }
+            }
+        });
+        curr.start();
+        return curr;
+    }
+
 
     public BidCatalog getBidCatalog() {
         return bidCatalog;

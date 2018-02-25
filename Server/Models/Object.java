@@ -62,12 +62,12 @@ public class Object implements Serializable{
 
         this.bids.add(newBid);
     }
-    public void display(){
-        System.out.println("The current object on bid is the following:");
-        System.out.println("Server.Models.Object name: " + name);
-        System.out.println("The starting bid: " + objectDescription.getStartingBid());
-        System.out.println("The estimated price: " + objectDescription.getEstimatedPrice());
-        System.out.println("The description: " + objectDescription.getDescription());
-        System.out.println();
+    public String display(){
+
+        String description = "The object is " + name +"\n" + "Starting bid: "
+                + objectDescription.getStartingBid()+ "\n"+ "Estimated price: "
+                + objectDescription.getEstimatedPrice() +"\n"+  "The description: "
+                + objectDescription.getDescription();
+        return description;
     }
 }

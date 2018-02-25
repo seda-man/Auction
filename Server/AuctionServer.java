@@ -17,6 +17,13 @@ public class AuctionServer
         System.out.println("Starting Auction Server");
         System.setProperty("java.rmi.server.hostname","127.0.0.1"); //"192.168.1.1");
         try{
+/*    try{
+    java.rmi.registry.LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
+    }
+    catch(java.rmi.server.ExportException e)
+    {
+      System.out.println("Registry already exists!");
+    }*/
             cImpl = new ControllerImpl();
             if (cImpl != null)
                 System.out.println("Made the remote object");

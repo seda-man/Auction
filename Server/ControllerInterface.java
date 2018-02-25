@@ -15,4 +15,6 @@ public interface  ControllerInterface extends Remote{
     ArrayList<Integer> getObjectIds() throws RemoteException;
     ObjectCatalog getObjectCatalog() throws RemoteException;
     int findWinner(int objectId) throws RemoteException;
+    String display(int objectId) throws RemoteException;
+    Thread autoBid(int userId, int objectId) throws RemoteException;
 }

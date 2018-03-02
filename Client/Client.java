@@ -5,15 +5,11 @@ import Server.Models.User;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.PushbackInputStream;
-import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
-import java.rmi.Remote;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
-import java.util.Scanner;
 import Server.Models.Object;
 import Server.ControllerInterface;
 
@@ -53,6 +49,13 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
         JTextField history = new JTextField();
         history.setEditable(false);
         history.setBounds(480, 25, 200, 250);
+        try {
+            String hist = controller.history(object.getObjectId(), current_user.getUserId());
+            history.setText(hist);
+        }
+        catch (Exception e){
+            System.out.println("history exception");
+        }
         JLabel time = new JLabel("0:0:0");
         time.setBounds(380,245,100, 30);
         frame.add(amount);
@@ -63,6 +66,17 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
         frame.add(history);
         frame.add(time);
 
+        hide_history.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try{
+                    controller.stopShowingHistory(object.getObjectId(), current_user.getUserId());
+                }
+                catch (Exception e){
+
+                }
+            }
+        });
         bid.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -94,11 +108,12 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try{
-                    autoBidThread.interrupt();
+                    controller.stopAutoBid(current_user.getUserId());
                     autoBid.setEnabled(true);
                     stopAutoBid.setEnabled(false);
                 }
                 catch(Exception e) {
+                    System.out.println("Exception");
                 }
             }
         });
@@ -113,11 +128,9 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
             ArrayList<Integer> objIds = controller.getObjectIds();
             for (int j = 0; j < objIds.size(); j++) {
                 String s = controller.display(objIds.get(j));
-                System.out.println(s);
                 JButton object = new JButton(s);
 //                object.setText();
                 frame.add(object);
-                System.out.println("in try block");
                 final int objectId = j;
                 object.addActionListener(new ActionListener() {
                     @Override

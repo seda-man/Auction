@@ -17,4 +17,8 @@ public interface  ControllerInterface extends Remote{
     int findWinner(int objectId) throws RemoteException;
     String display(int objectId) throws RemoteException;
     Thread autoBid(int userId, int objectId) throws RemoteException;
+    void stopAutoBid(int userId) throws RemoteException;
+
+    String history(int objectId, int userId) throws RemoteException;
+    void stopShowingHistory(int objectId, int userId) throws RemoteException;
 }

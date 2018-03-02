@@ -11,11 +11,30 @@ public class User implements Serializable{
     private ArrayList<Integer> bidIds;
     private int userId;
     private ClientInterface client;
+    private Thread autobidThread;
+    private Thread historyThread;
+
+    public void setHistoryThread(Thread historyThread) {
+        this.historyThread = historyThread;
+    }
+
+    public Thread getHistoryThread() {
+        return historyThread;
+    }
 
     public User(String username, int userId) {
         this.username = username;
         this.userId = userId;
         this.bidIds = new ArrayList<>();
+
+    }
+
+    public void setAutobidThread(Thread autobidThread) {
+        this.autobidThread = autobidThread;
+    }
+
+    public Thread getAutobidThread() {
+        return autobidThread;
     }
 
     public ClientInterface getClient() {

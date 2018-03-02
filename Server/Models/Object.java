@@ -11,6 +11,7 @@ public class Object implements Serializable{
     private String status;
     private ObjectDescription objectDescription;
     private ArrayList<Bid> bids = new ArrayList<>();
+    private ArrayList<String> historyList = new ArrayList<>();
 
     public Object(String name, int id, String status) {
         this.name = name;
@@ -61,7 +62,13 @@ public class Object implements Serializable{
     public void addBid(Bid newBid) {
 
         this.bids.add(newBid);
+        this.historyList.add(newBid.getDesc());
     }
+
+    public ArrayList<String> getHistoryList() {
+        return historyList;
+    }
+
     public String display(){
 
         String description = "The object is " + name +"\n" + "Starting bid: "

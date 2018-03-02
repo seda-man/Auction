@@ -1,13 +1,12 @@
 package Server.Models;
 
 import java.io.Serializable;
-
 public class Bid implements Serializable{
     private double amount;
     private int bidId;
     private int userId;
     private int objectId;
-
+    private String desc;
     public int getBidId() {
         return bidId;
     }
@@ -41,6 +40,12 @@ public class Bid implements Serializable{
         this.userId = userId;
         this.objectId = objectId;
         this.bidId = id;
+
+        this.desc = "user:  "+ userId + "   bid:   " + amount;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 
     public double getAmount() {

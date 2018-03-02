@@ -65,7 +65,7 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         this.objectIds.add(id);
     }
     public Thread autoBid(int userId, int objectId){
-        Thread curr = new Thread(new Runnable() {
+        Thread curr = new Thread(new Runnable(){
             @Override
             public void run() {
                 System.out.println("run");
@@ -74,7 +74,6 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
                     ArrayList<Bid> bids = current_obj.getBids();
                     double max = 0;
                     int max_user = 0;
-                    System.out.println("while");
                     for(Bid bid : bids){
                         if(bid.getAmount() > max){
                             max = bid.getAmount();
@@ -95,9 +94,16 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
             }
         });
         curr.start();
+        userCatalog.getUser(userId).setAutobidThread(curr);
         return curr;
     }
 
+    public void stopAutoBid(int userId){
+        Thread curr = userCatalog.getUser(userId).getAutobidThread();
+        while(curr.isInterrupted()){
+        }
+        curr.interrupt();
+    }
 
     public BidCatalog getBidCatalog() {
         return bidCatalog;
@@ -135,6 +141,40 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         }
     }
 
+    public String history(int objectId, int userId){
+        String h = "";
+        Thread curr = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("run");
+                while (true) {
+
+                    String h = "";
+                    ArrayList<String> historyList = objectCatalog.getObject(objectId).getHistoryList();
+                    for (int i = 0; i < historyList.size(); i++) {
+                        h = h + historyList.get(i) + "   ";
+                    }
+                    try{
+                        Thread.sleep(1000);
+                        }
+                    catch (InterruptedException e){
+                    System.out.println("Sleeping Thread 'zzzz...'");
+                    }
+                }
+            }
+
+        });
+        curr.start();
+        userCatalog.getUser(userId).setHistoryThread(curr);
+        return h;
+    }
+
+    public void stopShowingHistory(int objectId, int userId) {
+        Thread curr = userCatalog.getUser(userId).getHistoryThread();
+        while(curr.isInterrupted()){
+        }
+        curr.interrupt();
+    }
     public int findWinner(int objectId) {
         Object curr_object = objectCatalog.getObject(objectId);
         ArrayList<Bid> bids = curr_object.getBids();
@@ -154,6 +194,8 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         for(int id : userIds){
             userCatalog.getUser(id).winnerIs(userId);
         }
-    return userId;
+        return userId;
     }
+
+
 }

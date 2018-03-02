@@ -4,6 +4,7 @@ import Client.ClientInterface;
 import Server.Catalogs.ObjectCatalog;
 import Server.Models.User;
 
+import javax.swing.*;
 import java.rmi.*;
 import java.util.ArrayList;
 
@@ -19,6 +20,6 @@ public interface  ControllerInterface extends Remote{
     Thread autoBid(int userId, int objectId) throws RemoteException;
     void stopAutoBid(int userId) throws RemoteException;
 
-    String history(int objectId, int userId) throws RemoteException;
+    String history(int objectId, int userId, ClientInterface c) throws RemoteException;
     void stopShowingHistory(int objectId, int userId) throws RemoteException;
 }

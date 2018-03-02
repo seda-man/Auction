@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import Server.Models.Object;
@@ -17,7 +18,7 @@ import javax.swing.*;
 
 public class Client extends UnicastRemoteObject implements ClientInterface{
     private String status;
-    private Thread autoBidThread;
+    private JTextField history;
     private User current_user;
     public void notifyWin(){
         System.out.println("Congratulations you have won!");
@@ -28,6 +29,10 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
     public void notifyLoose(){
         System.out.println("Unfortunately you have lost :(");
         status = "done";
+    }
+
+    public void setHistory(String s) {
+        history.setText(s);
     }
 
     public void setUpBidding(ControllerInterface controller, Object object){
@@ -47,11 +52,15 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
         JButton hide_history = new JButton("Hide History");
         hide_history.setBounds(260,25,200, 30);
         JTextField history = new JTextField();
+        JButton show_history = new JButton("Show History");
+        show_history.setBounds(260,25,200, 30);
+        show_history.setVisible(false);
         history.setEditable(false);
+        frame.add(show_history);
+        this.history = history;
         history.setBounds(480, 25, 200, 250);
         try {
-            String hist = controller.history(object.getObjectId(), current_user.getUserId());
-            history.setText(hist);
+            controller.history(object.getObjectId(), current_user.getUserId(), Client.this);
         }
         catch (Exception e){
             System.out.println("history exception");
@@ -71,10 +80,28 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
             public void actionPerformed(ActionEvent actionEvent) {
                 try{
                     controller.stopShowingHistory(object.getObjectId(), current_user.getUserId());
+                    history.setText("");
+                    hide_history.setVisible(false);
+                    show_history.setVisible(true);
                 }
                 catch (Exception e){
 
                 }
+            }
+        });
+
+        show_history.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    controller.history(object.getObjectId(), current_user.getUserId(), Client.this);
+                    hide_history.setVisible(true);
+                    show_history.setVisible(false);
+                }
+                catch (Exception e){
+                    System.out.println("history exception");
+                }
+
             }
         });
         bid.addActionListener(new ActionListener() {
@@ -95,7 +122,7 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
                 try{
                     autoBid.setEnabled(false);
                     stopAutoBid.setEnabled(true);
-                    autoBidThread = controller.autoBid(current_user.getUserId(), object.getObjectId());
+                    controller.autoBid(current_user.getUserId(), object.getObjectId());
 
                 }
                 catch(Exception e) {

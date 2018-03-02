@@ -10,6 +10,7 @@ import Server.Models.Object;
 import Server.Models.ObjectDescription;
 import Server.Models.User;
 
+import javax.swing.*;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.rmi.server.UnicastRemoteObject;
@@ -102,7 +103,7 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         Thread curr = userCatalog.getUser(userId).getAutobidThread();
         while(curr.isInterrupted()){
         }
-        curr.interrupt();
+        curr.stop();
     }
 
     public BidCatalog getBidCatalog() {
@@ -141,7 +142,7 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         }
     }
 
-    public String history(int objectId, int userId){
+    public String history(int objectId, int userId, ClientInterface client){
         String h = "";
         Thread curr = new Thread(new Runnable() {
             @Override
@@ -152,7 +153,12 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
                     String h = "";
                     ArrayList<String> historyList = objectCatalog.getObject(objectId).getHistoryList();
                     for (int i = 0; i < historyList.size(); i++) {
-                        h = h + historyList.get(i) + "   ";
+                        h = h + historyList.get(i) + "\n";
+                    }
+                    try {
+                        client.setHistory(h);
+                    }
+                    catch (RemoteException e){
                     }
                     try{
                         Thread.sleep(1000);
@@ -173,7 +179,7 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         Thread curr = userCatalog.getUser(userId).getHistoryThread();
         while(curr.isInterrupted()){
         }
-        curr.interrupt();
+        curr.stop();
     }
     public int findWinner(int objectId) {
         Object curr_object = objectCatalog.getObject(objectId);

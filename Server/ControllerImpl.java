@@ -93,8 +93,22 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
             while (true) {
                 System.out.println(i);
                 if (i == 0) {
+                    ArrayList<Bid> bids = objectCatalog.getObject(id).getBids();
+                    ArrayList<ClientInterface> clients = new ArrayList<>();
+                    for(Bid bid: bids){
+                        clients.add(userCatalog.getUser(bid.getUserId()).getClient());
+                    }
+                    for(ClientInterface client : clients){
+                        try {
+                            client.setTimer("The auction is over");
+                        }
+                        catch (RemoteException e){
+                            System.out.println("RMI remote exception in setting time");
+                        }
+                    }
                     findWinner(id);
                     Thread.currentThread().interrupt();
+                    break;
                 }
                 ArrayList<Bid> bids = objectCatalog.getObject(id).getBids();
                 ArrayList<ClientInterface> clients = new ArrayList<>();
@@ -165,8 +179,6 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         curr.stop();
     }
 
-
-
     public void setClient(ClientInterface c, int userId){
         userCatalog.getUser(userId).setClient(c);
     }
@@ -182,7 +194,6 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
 //        }
     }
     public int findWinner(int objectId) {
-//        timer.interrupt();
         Object curr_object = objectCatalog.getObject(objectId);
         ArrayList<Bid> bids = curr_object.getBids();
         objectIds.remove(objectId);
@@ -200,6 +211,7 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         }
         int userId = bids.get(index).getUserId();
         for(int id : userIds){
+            stopAutoBid(userId);
             userCatalog.getUser(id).winnerIs(userId);
         }
         return userId;

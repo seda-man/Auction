@@ -23,7 +23,6 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
     public void notifyWin(){
         System.out.println("Congratulations you have won!");
         status = "done";
-
     }
 
     public void notifyLoose(){
@@ -36,7 +35,7 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
     }
 
     public void setTimer(String s) {
-        System.out.println(s);
+        timer.setText(s);
     }
 
     public void setUpBidding(ControllerInterface controller, Object object){

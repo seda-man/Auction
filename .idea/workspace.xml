@@ -3,28 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="65b15e1a-ea33-4248-9ecd-3fa500481b33" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$4.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$5.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$6.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$7.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$8.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Client/Client$1.class" afterPath="$PROJECT_DIR$/Client/Client$1.class" />
+      <change beforePath="$PROJECT_DIR$/Client/Client$2.class" afterPath="$PROJECT_DIR$/Client/Client$2.class" />
+      <change beforePath="$PROJECT_DIR$/Client/Client$3.class" afterPath="$PROJECT_DIR$/Client/Client$3.class" />
       <change beforePath="$PROJECT_DIR$/Client/Client.class" afterPath="$PROJECT_DIR$/Client/Client.class" />
       <change beforePath="$PROJECT_DIR$/Client/Client.java" afterPath="$PROJECT_DIR$/Client/Client.java" />
-      <change beforePath="$PROJECT_DIR$/Client/ClientInterface.class" afterPath="$PROJECT_DIR$/Client/ClientInterface.class" />
-      <change beforePath="$PROJECT_DIR$/Client/ClientInterface.java" afterPath="$PROJECT_DIR$/Client/ClientInterface.java" />
-      <change beforePath="$PROJECT_DIR$/Server/Catalogs/ObjectCatalog.class" afterPath="$PROJECT_DIR$/Server/Catalogs/ObjectCatalog.class" />
-      <change beforePath="$PROJECT_DIR$/Server/Catalogs/ObjectCatalog.java" afterPath="$PROJECT_DIR$/Server/Catalogs/ObjectCatalog.java" />
-      <change beforePath="$PROJECT_DIR$/Server/ControllerImpl$1.class" afterPath="$PROJECT_DIR$/Server/ControllerImpl$1.class" />
-      <change beforePath="$PROJECT_DIR$/Server/ControllerImpl$2.class" afterPath="$PROJECT_DIR$/Server/ControllerImpl$2.class" />
       <change beforePath="$PROJECT_DIR$/Server/ControllerImpl.class" afterPath="$PROJECT_DIR$/Server/ControllerImpl.class" />
       <change beforePath="$PROJECT_DIR$/Server/ControllerImpl.java" afterPath="$PROJECT_DIR$/Server/ControllerImpl.java" />
-      <change beforePath="$PROJECT_DIR$/Server/ControllerInterface.class" afterPath="$PROJECT_DIR$/Server/ControllerInterface.class" />
-      <change beforePath="$PROJECT_DIR$/Server/ControllerInterface.java" afterPath="$PROJECT_DIR$/Server/ControllerInterface.java" />
-      <change beforePath="$PROJECT_DIR$/Server/Models/Object.class" afterPath="$PROJECT_DIR$/Server/Models/Object.class" />
-      <change beforePath="$PROJECT_DIR$/Server/Models/Object.java" afterPath="$PROJECT_DIR$/Server/Models/Object.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,18 +36,21 @@
       <file leaf-file-name="ControllerImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/ControllerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+            <state relative-caret-position="348">
+              <caret line="195" column="40" lean-forward="false" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
               <folding>
                 <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
                 <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
+                <element signature="e#2477#4376#0" expanded="false" />
                 <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
                 <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-                <element signature="e#3927#4805#0" expanded="false" />
+                <element signature="e#4630#5508#0" expanded="false" />
                 <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-                <element signature="e#5162#5163#0" expanded="true" />
-                <element signature="e#5218#5219#0" expanded="true" />
+                <element signature="e#5863#5864#0" expanded="true" />
+                <element signature="e#5919#5920#0" expanded="true" />
                 <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
+                <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
+                <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
                 <element signature="method#stopShowingHistory#0;class#ControllerImpl#0" expanded="false" />
               </folding>
             </state>
@@ -72,17 +60,19 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+            <state relative-caret-position="276">
+              <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
+                <element signature="e#982#983#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
                 <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-                <element signature="e#2639#2971#0" expanded="false" />
-                <element signature="e#3014#3369#0" expanded="false" />
-                <element signature="e#3402#3626#0" expanded="false" />
-                <element signature="e#3664#3942#0" expanded="false" />
-                <element signature="e#3985#4293#0" expanded="false" />
+                <element signature="e#2633#2965#0" expanded="false" />
+                <element signature="e#3008#3363#0" expanded="false" />
+                <element signature="e#3396#3620#0" expanded="false" />
+                <element signature="e#3658#3936#0" expanded="false" />
+                <element signature="e#3979#4287#0" expanded="false" />
                 <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
                 <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
                 <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -538,12 +528,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
             <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2639#2971#0" expanded="false" />
-            <element signature="e#3014#3369#0" expanded="false" />
-            <element signature="e#3402#3626#0" expanded="false" />
-            <element signature="e#3664#3942#0" expanded="false" />
-            <element signature="e#3985#4293#0" expanded="false" />
+            <element signature="e#2633#2965#0" expanded="false" />
+            <element signature="e#3008#3363#0" expanded="false" />
+            <element signature="e#3396#3620#0" expanded="false" />
+            <element signature="e#3658#3936#0" expanded="false" />
+            <element signature="e#3979#4287#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -559,13 +551,16 @@
           <folding>
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4376#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#3927#4805#0" expanded="false" />
+            <element signature="e#4630#5508#0" expanded="false" />
             <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5162#5163#0" expanded="true" />
-            <element signature="e#5218#5219#0" expanded="true" />
+            <element signature="e#5863#5864#0" expanded="true" />
+            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#stopShowingHistory#0;class#ControllerImpl#0" expanded="false" />
           </folding>
         </state>
@@ -669,12 +664,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
             <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2639#2971#0" expanded="false" />
-            <element signature="e#3014#3369#0" expanded="false" />
-            <element signature="e#3402#3626#0" expanded="false" />
-            <element signature="e#3664#3942#0" expanded="false" />
-            <element signature="e#3985#4293#0" expanded="false" />
+            <element signature="e#2633#2965#0" expanded="false" />
+            <element signature="e#3008#3363#0" expanded="false" />
+            <element signature="e#3396#3620#0" expanded="false" />
+            <element signature="e#3658#3936#0" expanded="false" />
+            <element signature="e#3979#4287#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -690,13 +687,16 @@
           <folding>
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4376#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#3927#4805#0" expanded="false" />
+            <element signature="e#4630#5508#0" expanded="false" />
             <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5162#5163#0" expanded="true" />
-            <element signature="e#5218#5219#0" expanded="true" />
+            <element signature="e#5863#5864#0" expanded="true" />
+            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#stopShowingHistory#0;class#ControllerImpl#0" expanded="false" />
           </folding>
         </state>
@@ -726,13 +726,16 @@
           <folding>
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4376#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#3927#4805#0" expanded="false" />
+            <element signature="e#4630#5508#0" expanded="false" />
             <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5162#5163#0" expanded="true" />
-            <element signature="e#5218#5219#0" expanded="true" />
+            <element signature="e#5863#5864#0" expanded="true" />
+            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#stopShowingHistory#0;class#ControllerImpl#0" expanded="false" />
           </folding>
         </state>
@@ -791,12 +794,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
             <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2639#2971#0" expanded="false" />
-            <element signature="e#3014#3369#0" expanded="false" />
-            <element signature="e#3402#3626#0" expanded="false" />
-            <element signature="e#3664#3942#0" expanded="false" />
-            <element signature="e#3985#4293#0" expanded="false" />
+            <element signature="e#2633#2965#0" expanded="false" />
+            <element signature="e#3008#3363#0" expanded="false" />
+            <element signature="e#3396#3620#0" expanded="false" />
+            <element signature="e#3658#3936#0" expanded="false" />
+            <element signature="e#3979#4287#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -846,13 +851,16 @@
           <folding>
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4376#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#3927#4805#0" expanded="false" />
+            <element signature="e#4630#5508#0" expanded="false" />
             <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5162#5163#0" expanded="true" />
-            <element signature="e#5218#5219#0" expanded="true" />
+            <element signature="e#5863#5864#0" expanded="true" />
+            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#stopShowingHistory#0;class#ControllerImpl#0" expanded="false" />
           </folding>
         </state>
@@ -872,12 +880,14 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
             <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2639#2971#0" expanded="false" />
-            <element signature="e#3014#3369#0" expanded="false" />
-            <element signature="e#3402#3626#0" expanded="false" />
-            <element signature="e#3664#3942#0" expanded="false" />
-            <element signature="e#3985#4293#0" expanded="false" />
+            <element signature="e#2633#2965#0" expanded="false" />
+            <element signature="e#3008#3363#0" expanded="false" />
+            <element signature="e#3396#3620#0" expanded="false" />
+            <element signature="e#3658#3936#0" expanded="false" />
+            <element signature="e#3979#4287#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -1033,17 +1043,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+        <state relative-caret-position="276">
+          <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
             <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2639#2971#0" expanded="false" />
-            <element signature="e#3014#3369#0" expanded="false" />
-            <element signature="e#3402#3626#0" expanded="false" />
-            <element signature="e#3664#3942#0" expanded="false" />
-            <element signature="e#3985#4293#0" expanded="false" />
+            <element signature="e#2633#2965#0" expanded="false" />
+            <element signature="e#3008#3363#0" expanded="false" />
+            <element signature="e#3396#3620#0" expanded="false" />
+            <element signature="e#3658#3936#0" expanded="false" />
+            <element signature="e#3979#4287#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -1054,18 +1066,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/ControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+        <state relative-caret-position="348">
+          <caret line="195" column="40" lean-forward="false" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
           <folding>
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4376#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#3927#4805#0" expanded="false" />
+            <element signature="e#4630#5508#0" expanded="false" />
             <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5162#5163#0" expanded="true" />
-            <element signature="e#5218#5219#0" expanded="true" />
+            <element signature="e#5863#5864#0" expanded="true" />
+            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#stopShowingHistory#0;class#ControllerImpl#0" expanded="false" />
           </folding>
         </state>

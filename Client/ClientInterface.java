@@ -8,5 +8,6 @@ public interface ClientInterface extends Remote {
     void notifyWin() throws RemoteException;
     void notifyLoose() throws RemoteException;
     void setHistory(String s) throws RemoteException;
+    void setTimer(String s) throws RemoteException;
 
 }

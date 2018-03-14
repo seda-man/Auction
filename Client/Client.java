@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import Server.Models.Object;
@@ -18,7 +17,8 @@ import javax.swing.*;
 
 public class Client extends UnicastRemoteObject implements ClientInterface{
     private String status;
-    private JTextField history;
+    private JTextPane history = new JTextPane();
+    private JTextPane timer = new JTextPane() ;
     private User current_user;
     public void notifyWin(){
         System.out.println("Congratulations you have won!");
@@ -35,6 +35,10 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
         history.setText(s);
     }
 
+    public void setTimer(String s) {
+        System.out.println(s);
+    }
+
     public void setUpBidding(ControllerInterface controller, Object object){
         JFrame frame = new JFrame("Bidding on Object" + object.getName());
         frame.setSize(700,300);
@@ -42,106 +46,101 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
 
         JTextArea amount = new JTextArea();
         amount.setBounds(20,25, 200,20);
+        frame.add(amount);
+
         JButton bid = new JButton("Make Bid");
         bid.setBounds(45,65, 150,50);
+        frame.add(bid);
+
         JButton autoBid = new JButton("AutoBid");
         autoBid.setBounds(45,135, 150,50);
+        frame.add(autoBid);
+
         JButton stopAutoBid = new JButton("Stop Bidding");
         stopAutoBid.setEnabled(false);
         stopAutoBid.setBounds(45,205, 150,50);
+        frame.add(stopAutoBid);
+
         JButton hide_history = new JButton("Hide History");
         hide_history.setBounds(260,25,200, 30);
-        JTextField history = new JTextField();
+        frame.add(hide_history);
+
+
         JButton show_history = new JButton("Show History");
         show_history.setBounds(260,25,200, 30);
         show_history.setVisible(false);
-        history.setEditable(false);
         frame.add(show_history);
-        this.history = history;
+
+
+        history.setContentType("text/html");
+        history.setEditable(false);
         history.setBounds(480, 25, 200, 250);
+        frame.add(history);
+
+
         try {
             controller.history(object.getObjectId(), current_user.getUserId(), Client.this);
         }
         catch (Exception e){
             System.out.println("history exception");
         }
-        JLabel time = new JLabel("0:0:0");
-        time.setBounds(380,245,100, 30);
-        frame.add(amount);
-        frame.add(bid);
-        frame.add(autoBid);
-        frame.add(stopAutoBid);
-        frame.add(hide_history);
-        frame.add(history);
-        frame.add(time);
+        timer.setContentType("text/html");
+        timer.setEditable(false);
+        timer.setBounds(280,220,200, 50);
+        frame.add(timer);
 
-        hide_history.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                try{
-                    controller.stopShowingHistory(object.getObjectId(), current_user.getUserId());
-                    history.setText("");
-                    hide_history.setVisible(false);
-                    show_history.setVisible(true);
-                }
-                catch (Exception e){
+        hide_history.addActionListener(actionEvent -> {
+            try{
+                controller.stopShowingHistory(object.getObjectId(), current_user.getUserId());
+                history.setText("");
+                hide_history.setVisible(false);
+                show_history.setVisible(true);
+            }
+            catch (Exception e){
 
-                }
             }
         });
 
-        show_history.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                try {
-                    controller.history(object.getObjectId(), current_user.getUserId(), Client.this);
-                    hide_history.setVisible(true);
-                    show_history.setVisible(false);
-                }
-                catch (Exception e){
-                    System.out.println("history exception");
-                }
+        show_history.addActionListener(actionEvent -> {
+            try {
+                controller.history(object.getObjectId(), current_user.getUserId(), Client.this);
+                hide_history.setVisible(true);
+                show_history.setVisible(false);
+            }
+            catch (Exception e){
+                System.out.println("history exception");
+            }
+
+        });
+        bid.addActionListener(actionEvent -> {
+            try {
+                controller.makeBid(current_user.getUserId(), object.getObjectId(), Integer.valueOf(amount.getText()));
+            }
+            catch(Exception e){
 
             }
         });
-        bid.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                try {
-                    controller.makeBid(current_user.getUserId(), object.getObjectId(), Integer.valueOf(amount.getText()));
-                }
-                catch(Exception e){
 
-                }
+        autoBid.addActionListener(actionEvent -> {
+            try{
+                autoBid.setEnabled(false);
+                stopAutoBid.setEnabled(true);
+                controller.autoBid(current_user.getUserId(), object.getObjectId());
+
             }
-        });
-
-        autoBid.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                try{
-                    autoBid.setEnabled(false);
-                    stopAutoBid.setEnabled(true);
-                    controller.autoBid(current_user.getUserId(), object.getObjectId());
-
-                }
-                catch(Exception e) {
-                }
+            catch(Exception e) {
             }
         });
 
 
-        stopAutoBid.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                try{
-                    controller.stopAutoBid(current_user.getUserId());
-                    autoBid.setEnabled(true);
-                    stopAutoBid.setEnabled(false);
-                }
-                catch(Exception e) {
-                    System.out.println("Exception");
-                }
+        stopAutoBid.addActionListener(actionEvent -> {
+            try{
+                controller.stopAutoBid(current_user.getUserId());
+                autoBid.setEnabled(true);
+                stopAutoBid.setEnabled(false);
+            }
+            catch(Exception e) {
+                System.out.println("Exception");
             }
         });
         frame.setVisible(true);
@@ -156,7 +155,6 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
             for (int j = 0; j < objIds.size(); j++) {
                 String s = controller.display(objIds.get(j));
                 JButton object = new JButton(s);
-//                object.setText();
                 frame.add(object);
                 final int objectId = j;
                 object.addActionListener(new ActionListener() {
@@ -230,7 +228,7 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
 
         setupSignIn(controller);
     }
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         try {
             System.setProperty("java.rmi.server.hostname", "127.0.0.1");
             {

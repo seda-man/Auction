@@ -1,26 +1,30 @@
 package Server.Models;
-
-import Server.Models.ObjectDescription;
-
 import java.io.Serializable;
 import java.util.ArrayList;
+
 
 public class Object implements Serializable{
     private String name;
     private int objectId;
     private String status;
+    public int minutes;
     private ObjectDescription objectDescription;
     private ArrayList<Bid> bids = new ArrayList<>();
     private ArrayList<String> historyList = new ArrayList<>();
 
-    public Object(String name, int id, String status) {
+    public Object(String name, int id, String status, int minutes) {
         this.name = name;
         this.objectId = id;
         this.status = status;
+
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getMinutes() {
+        return minutes;
     }
 
     public void setName(String name) {
@@ -71,10 +75,10 @@ public class Object implements Serializable{
 
     public String display(){
 
-        String description = "The object is " + name +"\n" + "Starting bid: "
-                + objectDescription.getStartingBid()+ "\n"+ "Estimated price: "
-                + objectDescription.getEstimatedPrice() +"\n"+  "The description: "
-                + objectDescription.getDescription();
+        String description = "<html>The object is " + name +"<br>" + "Starting bid: "
+                + objectDescription.getStartingBid()+ "<br>"+ "Estimated price: "
+                + objectDescription.getEstimatedPrice() +"<br>"+  "The description: "
+                + objectDescription.getDescription() + "</html>";
         return description;
     }
 }

@@ -6,12 +6,12 @@ import Server.Models.Object;
 public class ObjectCatalog implements Serializable{
     private ArrayList<Object> objects = new ArrayList<Object>();
 
-    public Object makeObject(String name, String status) {
+    public Object makeObject(String name, String status, int minutes) {
         int id = 0;
         if(objects.size()>0){
             id = objects.get(objects.size() - 1).getObjectId() +1;
         }
-        Object newObject = new Object(name, id, status);
+        Object newObject = new Object(name, id, status, minutes);
         objects.add(newObject);
         return newObject;
     }

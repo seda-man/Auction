@@ -15,11 +15,10 @@ public interface  ControllerInterface extends Remote{
     void makeBid(int userId, int objectId, float amount) throws RemoteException;
     ArrayList<Integer> getObjectIds() throws RemoteException;
     ObjectCatalog getObjectCatalog() throws RemoteException;
-    int findWinner(int objectId) throws RemoteException;
     String display(int objectId) throws RemoteException;
     Thread autoBid(int userId, int objectId) throws RemoteException;
     void stopAutoBid(int userId) throws RemoteException;
 
-    String history(int objectId, int userId, ClientInterface c) throws RemoteException;
+    void history(int objectId, int userId, ClientInterface c) throws RemoteException;
     void stopShowingHistory(int objectId, int userId) throws RemoteException;
 }

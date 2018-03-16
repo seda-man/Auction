@@ -19,14 +19,26 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
     private String status;
     private JTextPane history = new JTextPane();
     private JTextPane timer = new JTextPane() ;
+    private JFrame frame;
     private User current_user;
+
+    public void endAuction(String res){
+        Component[] components= frame.getComponents();
+        JTextPane result = new JTextPane();
+        result.setBounds(260,75,200, 50);
+        frame.add(result);
+        result.setText(res);
+        for (Component c: components){
+            c.setEnabled(false);
+        }
+    }
     public void notifyWin(){
-        System.out.println("Congratulations you have won!");
+        endAuction("Congratulations you have won!");
         status = "done";
     }
 
     public void notifyLoose(){
-        System.out.println("Unfortunately you have lost :(");
+        endAuction("Unfortunately you have lost :(");
         status = "done";
     }
 
@@ -39,7 +51,7 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
     }
 
     public void setUpBidding(ControllerInterface controller, Object object){
-        JFrame frame = new JFrame("Bidding on Object" + object.getName());
+        frame = new JFrame("Bidding on Object" + object.getName());
         frame.setSize(700,300);
         frame.setLayout(null);
 
@@ -85,7 +97,7 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
         }
         timer.setContentType("text/html");
         timer.setEditable(false);
-        timer.setBounds(280,220,200, 50);
+        timer.setBounds(260,220,200, 50);
         frame.add(timer);
 
         hide_history.addActionListener(actionEvent -> {

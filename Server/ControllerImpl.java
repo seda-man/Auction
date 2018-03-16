@@ -91,7 +91,6 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         Thread curr = new Thread(() -> {
             int i = seconds ;
             while (true) {
-                System.out.println(i);
                 if (i == 0) {
                     ArrayList<Bid> bids = objectCatalog.getObject(id).getBids();
                     ArrayList<ClientInterface> clients = new ArrayList<>();
@@ -174,6 +173,9 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
 
     public void stopAutoBid(int userId){
         Thread curr = userCatalog.getUser(userId).getAutobidThread();
+        if(curr == null){
+            return;
+        }
         while(curr.isInterrupted()){
         }
         curr.stop();
@@ -189,9 +191,6 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
         Bid bid = bidCatalog.createBid(userId, objectId, amount);
         Object current_obj = objectCatalog.getObject(objectId);
         current_obj.addBid(bid);
-//        if(current_obj.getBids().size() == 3){
-//            findWinner(objectId);
-//        }
     }
     public int findWinner(int objectId) {
         Object curr_object = objectCatalog.getObject(objectId);

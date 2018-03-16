@@ -36,7 +36,6 @@ public class User implements Serializable{
     public Thread getAutobidThread() {
         return autobidThread;
     }
-
     public ClientInterface getClient() {
         return client;
     }
@@ -72,9 +71,11 @@ public class User implements Serializable{
         else {
             try {
                 if (winnerId == userId) {
-                    client.notifyWin();
+                    client.endAuction("Congratulations you have won!");
+//                    client.notifyWin();
                 } else {
-                    client.notifyLoose();
+                    client.endAuction("Unfortunately you have lost :(");
+//                    client.notifyLoose();
                 }
             }
             catch(RemoteException e){

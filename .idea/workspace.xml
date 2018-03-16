@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65b15e1a-ea33-4248-9ecd-3fa500481b33" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$1.class" afterPath="$PROJECT_DIR$/Client/Client$1.class" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$2.class" afterPath="$PROJECT_DIR$/Client/Client$2.class" />
-      <change beforePath="$PROJECT_DIR$/Client/Client$3.class" afterPath="$PROJECT_DIR$/Client/Client$3.class" />
-      <change beforePath="$PROJECT_DIR$/Client/Client.class" afterPath="$PROJECT_DIR$/Client/Client.class" />
-      <change beforePath="$PROJECT_DIR$/Client/Client.java" afterPath="$PROJECT_DIR$/Client/Client.java" />
-      <change beforePath="$PROJECT_DIR$/Server/ControllerImpl.class" afterPath="$PROJECT_DIR$/Server/ControllerImpl.class" />
-      <change beforePath="$PROJECT_DIR$/Server/ControllerImpl.java" afterPath="$PROJECT_DIR$/Server/ControllerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client$1.class" afterPath="$PROJECT_DIR$/Client/Client$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client$2.class" afterPath="$PROJECT_DIR$/Client/Client$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client$3.class" afterPath="$PROJECT_DIR$/Client/Client$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client.class" afterPath="$PROJECT_DIR$/Client/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/ClientInterface.class" afterPath="$PROJECT_DIR$/Client/ClientInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ControllerImpl.class" afterPath="$PROJECT_DIR$/Server/ControllerImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Models/User.class" afterPath="$PROJECT_DIR$/Server/Models/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/Client.java" afterPath="$PROJECT_DIR$/Client/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Client/ClientInterface.java" afterPath="$PROJECT_DIR$/Client/ClientInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/ControllerImpl.java" afterPath="$PROJECT_DIR$/Server/ControllerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/Models/User.java" afterPath="$PROJECT_DIR$/Server/Models/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,29 +29,25 @@
         <entry file="file://$PROJECT_DIR$/Server/ControllerInterface.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ControllerImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/ControllerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="195" column="40" lean-forward="false" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
+            <state relative-caret-position="516">
+              <caret line="179" column="9" lean-forward="true" selection-start-line="179" selection-start-column="9" selection-end-line="179" selection-end-column="9" />
               <folding>
+                <element signature="method#ControllerImpl#0;class#ControllerImpl#0" expanded="false" />
                 <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
                 <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
-                <element signature="e#2477#4376#0" expanded="false" />
+                <element signature="method#addObjectId#0;class#ControllerImpl#0" expanded="false" />
+                <element signature="e#2477#4337#0" expanded="false" />
                 <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
                 <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-                <element signature="e#4630#5508#0" expanded="false" />
-                <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-                <element signature="e#5863#5864#0" expanded="true" />
-                <element signature="e#5919#5920#0" expanded="true" />
                 <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
                 <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
                 <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
@@ -57,22 +57,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="801">
+              <caret line="99" column="41" lean-forward="true" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="41" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
-                <element signature="e#982#983#0" expanded="true" />
-                <element signature="e#1014#1015#0" expanded="true" />
-                <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-                <element signature="e#2633#2965#0" expanded="false" />
-                <element signature="e#3008#3363#0" expanded="false" />
-                <element signature="e#3396#3620#0" expanded="false" />
-                <element signature="e#3658#3936#0" expanded="false" />
-                <element signature="e#3979#4287#0" expanded="false" />
+                <element signature="e#2962#3294#0" expanded="false" />
+                <element signature="e#3337#3692#0" expanded="false" />
+                <element signature="e#3725#3949#0" expanded="false" />
+                <element signature="e#3987#4265#0" expanded="false" />
+                <element signature="e#4308#4616#0" expanded="false" />
                 <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
                 <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
                 <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -85,8 +80,8 @@
       <file leaf-file-name="ClientInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/ClientInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+            <state relative-caret-position="108">
+              <caret line="10" column="46" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -98,8 +93,7 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#998#999#0" expanded="true" />
-                <element signature="e#1025#1026#0" expanded="true" />
+                <marker date="1521118053592" expanded="true" signature="1019:1026" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -111,12 +105,7 @@
             <state relative-caret-position="0">
               <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
               <folding>
-                <element signature="method#Object#0;class#Object#0" expanded="false" />
-                <element signature="e#712#713#0" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-                <element signature="method#setObjectDescription#0;class#Object#0" expanded="false" />
-                <element signature="method#addBid#0;class#Object#0" expanded="false" />
-                <element signature="method#display#0;class#Object#0" expanded="false" />
+                <marker date="1521118053592" expanded="false" signature="1978:1985" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -127,7 +116,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
               <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-              <folding />
+              <folding>
+                <marker date="1521118053592" expanded="false" signature="603:614" ph=" { " />
+                <marker date="1521118053592" expanded="false" signature="637:643" ph=" }" />
+                <marker date="1521118053592" expanded="false" signature="686:697" ph=" { " />
+                <marker date="1521118053592" expanded="false" signature="712:718" ph=" }" />
+                <marker date="1521118053592" expanded="false" signature="773:784" ph=" { " />
+                <marker date="1521118053592" expanded="false" signature="807:813" ph=" }" />
+                <marker date="1521118053592" expanded="true" signature="856:1056" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,18 +132,10 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/Models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#513#514#0" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#807#808#0" expanded="true" />
-                <element signature="e#857#858#0" expanded="true" />
-                <element signature="e#897#898#0" expanded="true" />
-                <element signature="e#933#934#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,11 +155,11 @@
       <find>bi</find>
       <find>current_o</find>
       <find>setUpB</find>
-      <find>print</find>
       <find>this</find>
       <find>run</find>
       <find>prin</find>
       <find>for</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -206,13 +195,13 @@
         <option value="$PROJECT_DIR$/Client/ClientServer.java" />
         <option value="$PROJECT_DIR$/Server/AuctionServer.java" />
         <option value="$PROJECT_DIR$/Server/Models/Bid.java" />
-        <option value="$PROJECT_DIR$/Server/Models/User.java" />
         <option value="$PROJECT_DIR$/Server/Catalogs/ObjectCatalog.java" />
         <option value="$PROJECT_DIR$/Server/ControllerInterface.java" />
-        <option value="$PROJECT_DIR$/Client/ClientInterface.java" />
         <option value="$PROJECT_DIR$/Server/Models/Object.java" />
-        <option value="$PROJECT_DIR$/Client/Client.java" />
+        <option value="$PROJECT_DIR$/Client/ClientInterface.java" />
         <option value="$PROJECT_DIR$/Server/ControllerImpl.java" />
+        <option value="$PROJECT_DIR$/Server/Models/User.java" />
+        <option value="$PROJECT_DIR$/Client/Client.java" />
       </list>
     </option>
   </component>
@@ -236,7 +225,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,9 +269,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,13 +305,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Client.Client" />
@@ -336,6 +318,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Auction" />
       <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -371,6 +360,12 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -405,12 +400,6 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Application.Client" />
@@ -434,7 +423,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -449,7 +438,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.49707174" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24816984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24797843" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -498,7 +487,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -507,9 +496,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -526,16 +513,11 @@
         <state relative-caret-position="216">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2633#2965#0" expanded="false" />
-            <element signature="e#3008#3363#0" expanded="false" />
-            <element signature="e#3396#3620#0" expanded="false" />
-            <element signature="e#3658#3936#0" expanded="false" />
-            <element signature="e#3979#4287#0" expanded="false" />
+            <element signature="e#2962#3294#0" expanded="false" />
+            <element signature="e#3337#3692#0" expanded="false" />
+            <element signature="e#3725#3949#0" expanded="false" />
+            <element signature="e#3987#4265#0" expanded="false" />
+            <element signature="e#4308#4616#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -549,15 +531,13 @@
         <state relative-caret-position="918">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
+            <element signature="method#ControllerImpl#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#2477#4376#0" expanded="false" />
+            <element signature="method#addObjectId#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4337#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#4630#5508#0" expanded="false" />
-            <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5863#5864#0" expanded="true" />
-            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
@@ -572,14 +552,6 @@
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -605,9 +577,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -624,14 +594,6 @@
           <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -662,16 +624,11 @@
         <state relative-caret-position="810">
           <caret line="54" column="73" lean-forward="true" selection-start-line="54" selection-start-column="73" selection-end-line="54" selection-end-column="73" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2633#2965#0" expanded="false" />
-            <element signature="e#3008#3363#0" expanded="false" />
-            <element signature="e#3396#3620#0" expanded="false" />
-            <element signature="e#3658#3936#0" expanded="false" />
-            <element signature="e#3979#4287#0" expanded="false" />
+            <element signature="e#2962#3294#0" expanded="false" />
+            <element signature="e#3337#3692#0" expanded="false" />
+            <element signature="e#3725#3949#0" expanded="false" />
+            <element signature="e#3987#4265#0" expanded="false" />
+            <element signature="e#4308#4616#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -685,15 +642,13 @@
         <state relative-caret-position="1458">
           <caret line="104" column="52" lean-forward="true" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
           <folding>
+            <element signature="method#ControllerImpl#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#2477#4376#0" expanded="false" />
+            <element signature="method#addObjectId#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4337#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#4630#5508#0" expanded="false" />
-            <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5863#5864#0" expanded="true" />
-            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
@@ -724,15 +679,13 @@
         <state relative-caret-position="1206">
           <caret line="90" column="32" lean-forward="false" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
           <folding>
+            <element signature="method#ControllerImpl#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#2477#4376#0" expanded="false" />
+            <element signature="method#addObjectId#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4337#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#4630#5508#0" expanded="false" />
-            <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5863#5864#0" expanded="true" />
-            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
@@ -747,14 +700,6 @@
           <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,16 +737,11 @@
         <state relative-caret-position="1548">
           <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2633#2965#0" expanded="false" />
-            <element signature="e#3008#3363#0" expanded="false" />
-            <element signature="e#3396#3620#0" expanded="false" />
-            <element signature="e#3658#3936#0" expanded="false" />
-            <element signature="e#3979#4287#0" expanded="false" />
+            <element signature="e#2962#3294#0" expanded="false" />
+            <element signature="e#3337#3692#0" expanded="false" />
+            <element signature="e#3725#3949#0" expanded="false" />
+            <element signature="e#3987#4265#0" expanded="false" />
+            <element signature="e#4308#4616#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -814,9 +754,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -849,15 +787,13 @@
         <state relative-caret-position="18">
           <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
           <folding>
+            <element signature="method#ControllerImpl#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#2477#4376#0" expanded="false" />
+            <element signature="method#addObjectId#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4337#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#4630#5508#0" expanded="false" />
-            <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5863#5864#0" expanded="true" />
-            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
@@ -878,16 +814,11 @@
         <state relative-caret-position="90">
           <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2633#2965#0" expanded="false" />
-            <element signature="e#3008#3363#0" expanded="false" />
-            <element signature="e#3396#3620#0" expanded="false" />
-            <element signature="e#3658#3936#0" expanded="false" />
-            <element signature="e#3979#4287#0" expanded="false" />
+            <element signature="e#2962#3294#0" expanded="false" />
+            <element signature="e#3337#3692#0" expanded="false" />
+            <element signature="e#3725#3949#0" expanded="false" />
+            <element signature="e#3987#4265#0" expanded="false" />
+            <element signature="e#4308#4616#0" expanded="false" />
             <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
             <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
             <element signature="method#Client#0;class#Client#0" expanded="false" />
@@ -955,26 +886,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/Models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
+            <marker date="1521118053592" expanded="true" signature="1019:1026" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -983,7 +895,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
+          <folding>
+            <marker date="1521118053592" expanded="false" signature="603:614" ph=" { " />
+            <marker date="1521118053592" expanded="false" signature="637:643" ph=" }" />
+            <marker date="1521118053592" expanded="false" signature="686:697" ph=" { " />
+            <marker date="1521118053592" expanded="false" signature="712:718" ph=" }" />
+            <marker date="1521118053592" expanded="false" signature="773:784" ph=" { " />
+            <marker date="1521118053592" expanded="false" signature="807:813" ph=" }" />
+            <marker date="1521118053592" expanded="true" signature="856:1056" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1008,25 +928,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/ClientInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/Models/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
           <folding>
-            <element signature="method#Object#0;class#Object#0" expanded="false" />
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-            <element signature="method#setObjectDescription#0;class#Object#0" expanded="false" />
-            <element signature="method#addBid#0;class#Object#0" expanded="false" />
-            <element signature="method#display#0;class#Object#0" expanded="false" />
+            <marker date="1521118053592" expanded="false" signature="1978:1985" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1034,54 +941,63 @@
     <entry file="file://$PROJECT_DIR$/Server/ControllerInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#notifyLoose#0;class#Client#0" expanded="false" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="method#setUpBidding#0;class#Client#0" expanded="false" />
-            <element signature="e#2633#2965#0" expanded="false" />
-            <element signature="e#3008#3363#0" expanded="false" />
-            <element signature="e#3396#3620#0" expanded="false" />
-            <element signature="e#3658#3936#0" expanded="false" />
-            <element signature="e#3979#4287#0" expanded="false" />
-            <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
-            <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
-            <element signature="method#Client#0;class#Client#0" expanded="false" />
-            <element signature="method#main#0;class#Client#0" expanded="false" />
-          </folding>
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/ControllerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="195" column="40" lean-forward="false" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
+        <state relative-caret-position="516">
+          <caret line="179" column="9" lean-forward="true" selection-start-line="179" selection-start-column="9" selection-end-line="179" selection-end-column="9" />
           <folding>
+            <element signature="method#ControllerImpl#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signUp#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#signIn#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#2477#4376#0" expanded="false" />
+            <element signature="method#addObjectId#0;class#ControllerImpl#0" expanded="false" />
+            <element signature="e#2477#4337#0" expanded="false" />
             <element signature="method#display#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#autoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#4630#5508#0" expanded="false" />
-            <element signature="method#stopAutoBid#0;class#ControllerImpl#0" expanded="false" />
-            <element signature="e#5863#5864#0" expanded="true" />
-            <element signature="e#5919#5920#0" expanded="true" />
             <element signature="method#makeBid#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#findWinner#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#history#0;class#ControllerImpl#0" expanded="false" />
             <element signature="method#stopShowingHistory#0;class#ControllerImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/Models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/ClientInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="46" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="10" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="801">
+          <caret line="99" column="41" lean-forward="true" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="41" />
+          <folding>
+            <element signature="e#2962#3294#0" expanded="false" />
+            <element signature="e#3337#3692#0" expanded="false" />
+            <element signature="e#3725#3949#0" expanded="false" />
+            <element signature="e#3987#4265#0" expanded="false" />
+            <element signature="e#4308#4616#0" expanded="false" />
+            <element signature="method#setupObjects#0;class#Client#0" expanded="false" />
+            <element signature="method#setupSignIn#0;class#Client#0" expanded="false" />
+            <element signature="method#Client#0;class#Client#0" expanded="false" />
+            <element signature="method#main#0;class#Client#0" expanded="false" />
           </folding>
         </state>
       </provider>

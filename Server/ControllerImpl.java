@@ -159,7 +159,7 @@ public class ControllerImpl  extends UnicastRemoteObject implements ControllerIn
                     current_obj.addBid(bid);
                 }
                 try{
-                    Thread.sleep(10000);
+                    Thread.sleep(1000);
                 }
                 catch (InterruptedException e){
                     System.out.println("Sleeping Thread 'zzzz...'");

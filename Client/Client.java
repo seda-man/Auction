@@ -84,9 +84,11 @@ public class Client extends UnicastRemoteObject implements ClientInterface{
 
 
         history.setContentType("text/html");
+
+        JScrollPane sp = new JScrollPane(history);
         history.setEditable(false);
-        history.setBounds(480, 25, 200, 250);
-        frame.add(history);
+        sp.setBounds(480, 25, 200, 250);
+        frame.add(sp);
 
 
         try {
